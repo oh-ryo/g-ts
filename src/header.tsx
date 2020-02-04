@@ -1,11 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 
-const topPage = () => <div><h1>Top Page</h1>ここがトップページです</div>
-const page1 = () => <div><h1>page1</h1>1枚目のページです</div>
-const page2 = () => <div><h1>page2</h1>2枚目のページです</div>
-const page3 = () => <div><h1>page3</h1>3枚目のページです</div>
-const page4 = () => <div><h1>page4</h1>4枚目のページです</div>
+export const topPage = () => <div><h1>Top Page</h1>ここがトップページです</div>
+export const page1 = () => <div><h1>location1</h1>location1のギャラリーページです</div>
+export const page2 = () => <div><h1>location2</h1>location2のギャラリーページです</div>
+export const page3 = () => <div><h1>location3</h1>location3のギャラリーページです</div>
+export const page4 = () => <div><h1>location4</h1>location4のギャラリーページです</div>
 
 
 const Header: React.FC = () => {
