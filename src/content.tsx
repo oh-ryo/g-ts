@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useCallback, } from 'react';
-import { Slide, Gallery } from './images';
-import { render } from '@testing-library/react';
+import React, { useState, useCallback, } from 'react';
+import { Slide } from './constants/images';
+import {Link} from 'react-router-dom';
+import {Routing} from './config/router';
+
+
 
 const Content: React.FC = () => {
   const [count, setCount] = useState<number>(0);
@@ -23,36 +26,16 @@ const Content: React.FC = () => {
     },
     [count],
   )
-  //const galleryList =  Gallery[count].map((url, index) => <img src={Gallery[count][index]} alt={Gallery[count][index]} key={Gallery[count][index]}/>);
-  const galleryFunc  = () => {
-    return(
-      render(
-        <p>
-          {Gallery[count].map((url, index) => <img src={Gallery[count][index]} alt={Gallery[count][index]} key={Gallery[count][index]}/>)}
-        </p>
-      )
-    )
-  }
 
-
-
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
   return (
     <section>
       <p>You clicked {count} times</p>
       <p>
         <button onClick={handleIncrement}>+1</button>
-        <img src={Slide[count]} alt="" key={Slide[count]} onClick={galleryFunc}/>
+        <Link to='/location1'><img src={Slide[count]} alt="" key={Slide[count]}/></Link>
         <button onClick={handleDecrement}>-1</button>
-        {/* <p>{galleryList}</p> */}
       </p>
-      <p>
-        <button onClick={() => setCount(0)}>
-          Reset button
-        </button>
-      </p>
+      <Routing />
     </section>
   )
 }

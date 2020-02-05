@@ -1,20 +1,18 @@
 import React from 'react';
 import './App.css';
-import Common from './common';
 import Header from './header';
 import Content from './content';
+import {BrowserRouter as Router} from 'react-router-dom';
+
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
         <Header />
-      </header>
       <article>
-        <Common name="john du"/>
         <Content />
       </article>
-    </div>
+    </Router>
   );
 }
 
